@@ -13,6 +13,7 @@ var jsondata;
 var settings;
 
 $(document).ready(function(){
+    changeImage();
     $("#compare1").click(function(){
         //alert($(this).attr("style"));
         changeImage();
@@ -83,8 +84,8 @@ function changeImage() {
         img2=Math.floor(Math.random()*10)+1;
     }
 
-    $("#compare1").attr("style", "background-image:url(img/" + img1 + ".jpg)");
-    $("#compare2").attr("style", "background-image:url(img/" + img2 + ".jpg)");
+    $("#compare1").attr("style", "background-image:url(img/lesions/" + img1 + ".jpg)");
+    $("#compare2").attr("style", "background-image:url(img/lesions/" + img2 + ".jpg)");
 
     imgprev1 = img1;
     imgprev2 = img2;

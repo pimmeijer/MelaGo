@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>App</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- JQuery functions -->
+    <script src="js/jquery_patient.js"></script>
+</head>
+
+<body>
+<!-- Start your project here-->
+<nav class="navbar navbar-dark primary-color navbar-fixed-top">
+    <a class="nav-link" href="index.html"><i class="fa fa-arrow-left white-text" aria-hidden="true"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-lg-0 text-right">
+            <li class="nav-item">
+                <a class="nav-link" href="compare.html">Annotation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Tutorial</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Patient<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <h1 class="mt-4">Patient status</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <img class="img-fluid" src="img/patient/female6.png" alt="patient" id="patient"/>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col text-center mt-4">
+            <button class="btn btn-primary" type="button" onclick="sick()">Sick</button>
+            <button class="btn btn-primary" type="button" onclick="healthy()">Healthy</button>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <h5 class="mt-4">Total number of images graded: 156</h5>
+
+    </div>
+</div>
+<div class="row justify-content-center">
+
+</div>
+
+</body>
+
+</html>
