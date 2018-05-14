@@ -11,14 +11,18 @@ var imageID = "5af202395c1d2a2d00007bf4";
 var jsondata;
 //= {"annotationID": annotationID , "asymmetryScore": asymmetryScore, "borderScore": borderScore ,"colorScore": colorScore , "timesAnnotated": timesAnnotated};
 var settings;
+var clickcount = 0;
+var question;
+var questionduration = 1;
 
 $(document).ready(function(){
+    changeQuestion();
     changeImage();
+
     $("#compare1").click(function(){
         //alert($(this).attr("style"));
-        changeImage();
-        asymmetryScore = 678;
 
+        asymmetryScore = 678;
         jsondata = {"asymmetryScore": asymmetryScore, "timesAnnotated": timesAnnotated};
         settings = {
             "async": true,
@@ -37,10 +41,11 @@ $(document).ready(function(){
         $.ajax(settings).done(function (response) {
             console.log(response);
         });
+
+        changeImage();
+        changeQuestion();
     });
     $("#compare2").click(function(){
-        //alert($(this).attr("style"));
-        changeImage();
         asymmetryScore = 678;
 
         jsondata = {"annotationID": annotationID , "asymmetryScore": asymmetryScore, "timesAnnotated": timesAnnotated};
@@ -63,6 +68,9 @@ $(document).ready(function(){
         $.ajax(settings).done(function (response) {
             console.log(response);
         });
+
+        changeImage();
+        changeQuestion();
     });
 });
 
@@ -89,4 +97,26 @@ function changeImage() {
 
     imgprev1 = img1;
     imgprev2 = img2;
+}
+
+function changeQuestion() {
+    clickcount++;
+    if (questionduration == clickcount) {
+        question = Math.floor(Math.random() * 3);
+        switch (question) {
+            case 0:
+                $("#question").text("Which picture is more asymmetric?")
+                break;
+            case 1:
+                $("#question").text("Which picture has a more irregular border?")
+                break;
+            case 2:
+                $("#question").text("Which picture has a higher variation in color?")
+                break;
+        }
+        //$("#question").css("color", "#4285F4");
+        //$("#question").animate({color: "blue"}, "fast");
+        questionduration = 40 - (Math.floor(Math.random() * 20) + 1);
+        clickcount = 0;
+    }
 }
