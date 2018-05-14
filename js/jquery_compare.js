@@ -17,7 +17,7 @@ var question;
 var questionduration = 1;
 
 $(document).ready(function(){
-    changeQuestion();
+    changeQuestion(0);
     changeImage();
 
     $("#compare1").click(function(){
@@ -44,7 +44,7 @@ $(document).ready(function(){
         });
 
         changeImage();
-        changeQuestion();
+        changeQuestion(1);
     });
     $("#compare2").click(function(){
         asymmetryScore = 678;
@@ -71,41 +71,44 @@ $(document).ready(function(){
         });
 
         changeImage();
-        changeQuestion();
+        changeQuestion(1);
     });
 });
 
 function changeImage() {
-    var img1=Math.floor(Math.random()*10)+1;
-    var img2=Math.floor(Math.random()*10)+1;
+    var img1=Math.floor(Math.random()*111);
+    var img2=Math.floor(Math.random()*111);
     while (img1 == img2)
     {
-        img2=Math.floor(Math.random()*10)+1;
+        img2=Math.floor(Math.random()*111);
     }
 
     while (imgprev1 == img1)
     {
-        img1=Math.floor(Math.random()*10)+1;
+        img1=Math.floor(Math.random()*111);
     }
 
     while (imgprev2 == img2)
     {
-        img2=Math.floor(Math.random()*10)+1;
+        img2=Math.floor(Math.random()*111);
     }
 
-    $("#compare1").attr("style", "background-image:url(img/lesions/" + img1 + ".jpg)");
-    $("#compare2").attr("style", "background-image:url(img/lesions/" + img2 + ".jpg)");
+    img1 = ('00' + img1).slice(-3);
+    img2 = ('00' + img2).slice(-3);
+    $("#compare1").attr("style", "background-image:url(img/lesions/ISIC_0000" + img1 + ".jpg)");
+    $("#compare2").attr("style", "background-image:url(img/lesions/ISIC_0000" + img2 + ".jpg)");
 
     imgprev1 = img1;
     imgprev2 = img2;
 }
 
-function changeQuestion() {
+function changeQuestion(init) {
     clickcount++;
 
     if (questionduration == clickcount) {
-        $("#question").css("color", "#CC0000");
-
+        if (init == 1) {
+            $("#question").css("color", "#CC0000");
+        }
         while (question == prevquestion) {
             question = Math.floor(Math.random() * 3);
         }
@@ -123,9 +126,13 @@ function changeQuestion() {
                 break;
         }
 
-        $("#question").animate({color: '#6c757d'}, 2500);
+        $("#question").delay(500).animate({color: '#343a40'}, 1500);
 
         questionduration = 40 - (Math.floor(Math.random() * 20) + 1);
         clickcount = 0;
     }
 }
+
+Number.prototype.pad = function(n) {
+    return new Array(n).join('0').slice((n || 2) * -1) + this;
+};

@@ -24,7 +24,7 @@
                 <h1 class="mt-4">Log in</h1>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="incorrect">
             <!-- Material form login -->
             <form>
                 <!-- Material input email -->
@@ -39,22 +39,23 @@
                     <input type="password" id="materialFormLoginPasswordEx" class="form-control">
                     <label for="materialFormLoginPasswordEx">Password</label>
                 </div>
-
+            </form>
+        </div>
+        <div class="row justify-content-center">
+            <div class="text-center mt-4">
+                <button class="btn btn-primary" type="button" onclick="loginCheck()">Login</button>
+            </div>
+        </div>
 <!--
 DATABASE
 Get compare username and password filled into form to database, if correct, set active user and go to next page. If not, display error message and clear form
 Check time and subtract points from patient status accordingly
 -->
-                <div class="text-center mt-4">
-                    <button class="btn btn-primary" type="button" onclick="window.location.href='compare.html'">Login</button>
-                </div>
-            </form>
             <!-- Material form login -->
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col text-center">
-            <p class="mt-4">Don't have an account? <a href="register.html"><b>Sign up</b></a></p>
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <p class="mt-4">Don't have an account? <a href="register.html"><b>Sign up</b></a></p>
+            </div>
         </div>
     </div>
     <!-- /Start your project here-->
@@ -62,6 +63,8 @@ Check time and subtract points from patient status accordingly
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- JQuery -->
+    <script src="js/jquery_login.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->

@@ -40,11 +40,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="compare.html">Annotation</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Patient<span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link" href="unlockables.html">Unlockables</a>
+                <a class="nav-link" href="patient.html">Patient</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Unlockables<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Tutorial</a>
@@ -55,24 +55,34 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col text-center">
-            <h1 class="mt-4">Patient status</h1>
+            <h1 class="mt-4">Unlockables</h1>
         </div>
     </div>
-
-<!--
-DATABASE
-Get patient counter
-Adjust patient accordingly
--->
+    <div class="row justify-content-center">
+        <div class="col-4 text-center">
+            <img class="img-fluid mt-3" src="img/spar.png" alt="spar"/>
+        </div>
+    </div>
     <div class="row justify-content-center">
         <div class="col text-center">
-            <img class="img-fluid" src="img/patient/female6.png" alt="patient" id="patient"/>
+            <h4 class="mt-3">Save up for Spar University coupons by annotating images!</h4>
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col text-center mt-4">
-            <button class="btn btn-primary" type="button" onclick="sick()">Sick</button>
-            <button class="btn btn-primary" type="button" onclick="healthy()">Healthy</button>
+        <div class="col-10 text-center">
+            <!--
+            DATABASE
+            Get unlockable counter value from database, set bar by changing the width and aria-valuenow.
+            -->
+            <h5 class="mt-3">Progress</h5>
+            <div class="progress" style="height: 20px">
+                <div class="progress-bar" role="progressbar" style="width: 25%; height: 20px" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <h5 class="mt-5">Total number of images graded: X</h5>
         </div>
     </div>
 </div>

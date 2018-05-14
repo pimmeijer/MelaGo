@@ -24,7 +24,7 @@
                 <h1 class="mt-4">Sign up</h1>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="passmatch">
             <!-- Material form login -->
             <form>
                 <!-- Material input email -->
@@ -39,22 +39,22 @@
                     <input type="password" id="materialFormLoginPasswordEx" class="form-control">
                     <label for="materialFormLoginPasswordEx">Password</label>
                 </div>
-
                 <div class="md-form">
                     <i class="fa fa-exclamation-triangle prefix grey-text"></i>
                     <input type="password" id="materialFormLoginPasswordEx" class="form-control">
                     <label for="materialFormLoginPasswordEx">Confirm password</label>
                 </div>
+            </form>
+        </div>
 
 <!--
 DATABASE
 Check whether passwords are the same. If so, create new user in database, if not, display error message and clear form
 -->
-                <div class="text-center mt-4">
-                    <button class="btn btn-primary" type="button" onclick="window.location.href='login.html'">Register</button>
-                </div>
-            </form>
-            <!-- Material form login -->
+        <div class="row justify-content-center">
+            <div class="text-center mt-4">
+                <button class="btn btn-primary" type="button" onclick="registerCheck()">Register</button>
+            </div>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -67,6 +67,7 @@ Check whether passwords are the same. If so, create new user in database, if not
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery_register.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->

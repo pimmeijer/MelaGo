@@ -34,19 +34,21 @@
 <body>
     <!-- Start your project here-->
     <nav class="navbar navbar-dark primary-color navbar-fixed-top">
-        <a class="nav-link" href="index.html"><i class="fa fa-arrow-left white-text" aria-hidden="true"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav mr-auto mt-lg-0 text-right">
+            <ul class="navbar-nav mr-auto mt-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Annotation<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="patient.html">Patient</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="unlockables.html">Unlockables</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Tutorial</a>
@@ -62,23 +64,24 @@ Check corresponding ID
 Check ABC question
 Assign points to ID
 Increase patient counter
+Increase unlockable counter
 Increase total images graded
 Check whether the patient status has increased, if so, notify the user
 -->
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-8 text-center">
-                <div class="compare mt-4" id="compare1" style="background-image:url(img/lesions/6.jpg)"></div>
+                <div class="compare mt-4" id="compare1"></div>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col text-center">
-                <h5 class="mt-4" id="question"></h5>
+                <h5 class="mt-4 h5-responsive" id="question"></h5>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-8 text-center">
-                <div class="compare mt-4" id="compare2" style="background-image:url(img/lesions/2.jpg)"></div>
+                <div class="compare mt-4" id="compare2"></div>
             </div>
         </div>
     </div>
