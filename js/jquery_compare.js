@@ -2,6 +2,7 @@ var img1;
 var img2;
 var imgprev1;
 var imgprev2;
+var prevquestion;
 var annotationID;
 var asymmetryScore;
 var borderScore;
@@ -101,21 +102,29 @@ function changeImage() {
 
 function changeQuestion() {
     clickcount++;
+
     if (questionduration == clickcount) {
-        question = Math.floor(Math.random() * 3);
+        $("#question").css("color", "#CC0000");
+
+        while (question == prevquestion) {
+            question = Math.floor(Math.random() * 3);
+        }
+        prevquestion = question;
+
         switch (question) {
             case 0:
-                $("#question").text("Which picture is more asymmetric?")
+                $("#question").html("<b>Which picture is more asymmetric?</b>")
                 break;
             case 1:
-                $("#question").text("Which picture has a more irregular border?")
+                $("#question").html("<b>Which picture has a more irregular border?</b>")
                 break;
             case 2:
-                $("#question").text("Which picture has a higher variation in color?")
+                $("#question").html("<b>Which picture has a higher variation in color?</b>")
                 break;
         }
-        //$("#question").css("color", "#4285F4");
-        //$("#question").animate({color: "blue"}, "fast");
+
+        $("#question").animate({color: '#6c757d'}, 2500);
+
         questionduration = 40 - (Math.floor(Math.random() * 20) + 1);
         clickcount = 0;
     }
