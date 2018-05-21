@@ -21,8 +21,6 @@ $(document).ready(function(){
     changeImage();
 
     $("#compare1").click(function(){
-        //alert($(this).attr("style"));
-
         asymmetryScore = 678;
         jsondata = {"asymmetryScore": asymmetryScore, "timesAnnotated": timesAnnotated};
         settings = {
@@ -69,6 +67,12 @@ $(document).ready(function(){
         $.ajax(settings).done(function (response) {
             console.log(response);
         });
+
+        changeImage();
+        changeQuestion(1);
+    });
+
+    $("#notsure").click(function(){
 
         changeImage();
         changeQuestion(1);
@@ -128,7 +132,7 @@ function changeQuestion(init) {
 
         $("#question").delay(500).animate({color: '#343a40'}, 1500);
 
-        questionduration = 40 - (Math.floor(Math.random() * 20) + 1);
+        questionduration = 30 - (Math.floor(Math.random() * 20) + 1);
         clickcount = 0;
     }
 }

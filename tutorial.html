@@ -26,10 +26,16 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- JQuery functions -->
-    <script src="js/jquery_compare.js"></script>
+    <script src="js/jquery_tutorial.js"></script>
 </head>
 
 <body>
+    <div id="tutorialoverlay">
+        <div id="overlaytext" class="text-center">
+            <h5 id="instruction">Tap one of the images according to the question in the middle.</h5>
+            <button class="btn btn-primary" type="button" id="nextbutton" onclick="next()">Next</button>
+        </div>
+    </div>
     <!-- Start your project here-->
     <nav class="navbar navbar-dark primary-color navbar-fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler"
@@ -39,8 +45,8 @@
 
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav mr-auto mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Annotation<span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="compare.html">Annotation</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="patient.html">Patient</a>
@@ -48,41 +54,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href="unlockables.html">Unlockables</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="tutorial.html">Tutorial</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Tutorial<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
     </nav>
 
-<!--
-DATABASE
-Check which image is clicked
-Check corresponding ID
-Check ABC question
-Assign points to ID
-Increase patient counter
-Increase unlockable counter
-Increase total images graded
-Check whether the patient status has increased, if so, notify the user
--->
     <div class="container-fluid">
-        <div class="row justify-content-end">
+        <div class="row justify-content-center">
             <div class="col-8 text-center">
-                <div class="compare mt-4" id="compare1"></div>
-            </div>
-            <div class="col-2" align="center">
-                <i class="fa fa-question-circle fa-2x mt-3" aria-hidden="true" id="notsure"></i>
+                <div class="compare mt-4" id="compare1" style="background-image:url(img/tutorial/tut01.jpg)"></div>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col text-center">
-                <h5 class="mt-4 h5-responsive" id="question"></h5>
+                <h5 class="mt-4 h5-responsive" id="question"><b>Which image is more asymmetric?</b></h5>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-8 text-center">
-                <div class="compare mt-4" id="compare2"></div>
+                <div class="compare mt-4" id="compare2" style="background-image:url(img/tutorial/tut02.jpg)"></div>
             </div>
         </div>
     </div>
