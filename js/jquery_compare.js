@@ -17,6 +17,8 @@ var question;
 var questionduration = 1;
 
 $(document).ready(function(){
+    checkCookie();
+    //alert(getCookie("user"));
     changeQuestion(0);
     changeImage();
 
@@ -140,3 +142,38 @@ function changeQuestion(init) {
 Number.prototype.pad = function(n) {
     return new Array(n).join('0').slice((n || 2) * -1) + this;
 };
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+        user = Math.floor(Math.random() * 99);
+        if (user != "" && user != null) {
+            setCookie("username", user, 30);
+        }
+    }
+}
