@@ -172,7 +172,7 @@ function off() {
 };
 
 function endTutorial() {
-    $("#instruction").html("That was the final image!<br><br>If you start annotating for real, and you really don't know which image to pick, you can tap the <i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i> icon to skip the images.");
+    $("#instruction").html("That was the final image!<br><br>If you start annotating for real, and you really don't know which image to pick, you can tap the <i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i> icon to skip the images.<br><br>If you need to view the image in a different light, you can tap the <i class=\"fa fa-adjust\" aria-hidden=\"true\"></i> icon in order to apply a filer to the images.");
     $("#nextbutton").html("Start annotating!");
     $("#nextbutton").attr("onclick", "redirect()");
     $("#question").html("");

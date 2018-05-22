@@ -15,10 +15,10 @@ var settings;
 var clickcount = 0;
 var question;
 var questionduration = 1;
+var filter = 0;
 
 $(document).ready(function(){
     checkCookie();
-    //alert(getCookie("user"));
     changeQuestion(0);
     changeImage();
 
@@ -74,29 +74,69 @@ $(document).ready(function(){
         changeQuestion(1);
     });
 
-    $("#notsure").click(function(){
+    $("#filter").click(function() {
+        var lesion1 = $("#compare1").attr("style");
+        var lesion2 = $("#compare2").attr("style");
 
+        if (filter == 0) {
+            var lesion1new = lesion1.replace(".jpg", "_segmentation.png");
+            var lesion2new = lesion2.replace(".jpg", "_segmentation.png");
+            filter = 1;
+            $("#compare1").attr("style", lesion1new);
+            $("#compare2").attr("style", lesion2new);
+            return;
+        }
+
+        if (filter == 1) {
+            var lesion1new = lesion1.replace("_segmentation.png", ".jpg");
+            var lesion2new = lesion2.replace("_segmentation.png", ".jpg");
+            filter = 0;
+            $("#compare1").attr("style", lesion1new);
+            $("#compare2").attr("style", lesion2new);
+            return;
+        }
+
+        /*
+        if (filter == 0) {
+            imgprev1 = ('00' + imgprev1).slice(-3);
+            imgprev2 = ('00' + imgprev2).slice(-3);
+            $("#compare1").attr("style", "background-image:url(img/lesions/ISIC_0000" + imgprev1 + "_segmentation.png)");
+            $("#compare2").attr("style", "background-image:url(img/lesions/ISIC_0000" + imgprev2 + "_segmentation.png)");
+            filter = 1;
+        }
+
+        if (filter == 1) {
+            imgprev1 = ('00' + imgprev1).slice(-3);
+            imgprev2 = ('00' + imgprev2).slice(-3);
+            $("#compare1").attr("style", "background-image:url(img/lesions/ISIC_0000" + imgprev1 + ".jpg)");
+            $("#compare2").attr("style", "background-image:url(img/lesions/ISIC_0000" + imgprev2 + ".jpg)");
+            filter = 0;
+        }
+         */
+    });
+
+    $("#notsure").click(function(){
         changeImage();
         changeQuestion(1);
     });
 });
 
 function changeImage() {
-    var img1=Math.floor(Math.random()*111);
-    var img2=Math.floor(Math.random()*111);
+    var img1=Math.floor(Math.random()*100);
+    var img2=Math.floor(Math.random()*100);
     while (img1 == img2)
     {
-        img2=Math.floor(Math.random()*111);
+        img2=Math.floor(Math.random()*100);
     }
 
     while (imgprev1 == img1)
     {
-        img1=Math.floor(Math.random()*111);
+        img1=Math.floor(Math.random()*100);
     }
 
     while (imgprev2 == img2)
     {
-        img2=Math.floor(Math.random()*111);
+        img2=Math.floor(Math.random()*100);
     }
 
     img1 = ('00' + img1).slice(-3);
