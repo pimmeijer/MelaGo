@@ -22,6 +22,11 @@ $(document).ready(function(){
     changeQuestion(0);
     changeImage();
 
+    /*
+    if (getCookie("tutorial") != 1) {
+        window.location.href="tutorial.html"
+    } */
+
     $("#compare1").click(function(){
         asymmetryScore = 678;
         jsondata = {"asymmetryScore": asymmetryScore, "timesAnnotated": timesAnnotated};
@@ -95,24 +100,6 @@ $(document).ready(function(){
             $("#compare2").attr("style", lesion2new);
             return;
         }
-
-        /*
-        if (filter == 0) {
-            imgprev1 = ('00' + imgprev1).slice(-3);
-            imgprev2 = ('00' + imgprev2).slice(-3);
-            $("#compare1").attr("style", "background-image:url(img/lesions/ISIC_0000" + imgprev1 + "_segmentation.png)");
-            $("#compare2").attr("style", "background-image:url(img/lesions/ISIC_0000" + imgprev2 + "_segmentation.png)");
-            filter = 1;
-        }
-
-        if (filter == 1) {
-            imgprev1 = ('00' + imgprev1).slice(-3);
-            imgprev2 = ('00' + imgprev2).slice(-3);
-            $("#compare1").attr("style", "background-image:url(img/lesions/ISIC_0000" + imgprev1 + ".jpg)");
-            $("#compare2").attr("style", "background-image:url(img/lesions/ISIC_0000" + imgprev2 + ".jpg)");
-            filter = 0;
-        }
-         */
     });
 
     $("#notsure").click(function(){
@@ -187,7 +174,7 @@ function setCookie(cname,cvalue,exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires;
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {

@@ -5,6 +5,9 @@ var alternate = 0;
 var savegrade;
 
 $(document).ready(function(){
+    if (getCookie("tutorial") != 1) {
+        $("#navbutton").css("display", "none");
+    }
 
     $("#compare1").click(function(){
         switch (currentimg) {
@@ -172,13 +175,50 @@ function off() {
 };
 
 function endTutorial() {
-    $("#instruction").html("That was the final image!<br><br>If you start annotating for real, and you really don't know which image to pick, you can tap the <i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i> icon to skip the images.<br><br>If you need to view the image in a different light, you can tap the <i class=\"fa fa-adjust\" aria-hidden=\"true\"></i> icon in order to apply a filer to the images.");
+    $("#instruction").html("That was the final image!" +
+        "<br><br>If you start annotating for real, and you really don't know which image to pick, you can tap the " +
+        "<i class=\"fa fa-mail-forward\" aria-hidden=\"true\"></i> icon to skip the images." +
+        "<br><br>If you need to view the image in a different light, you can tap the " +
+        "<i class=\"fa fa-adjust\" aria-hidden=\"true\"></i> icon in order to apply a filer to the images.");
     $("#nextbutton").html("Start annotating!");
     $("#nextbutton").attr("onclick", "redirect()");
     $("#question").html("");
+    checkCookie();
     on();
 }
 
 function redirect() {
     window.location.href = "compare.html";
+}
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("tutorial");
+    if (user != "") {
+        return;
+    } else {
+        setCookie("tutorial", 1, 365);
+    }
 }
