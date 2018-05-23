@@ -16,6 +16,7 @@ var clickcount = 0;
 var question;
 var questionduration = 1;
 var filter = 0;
+var patientcounter = 0;
 
 $(document).ready(function(){
     checkCookie();
@@ -106,6 +107,10 @@ $(document).ready(function(){
         changeImage();
         changeQuestion(1);
     });
+
+    $("#notification").click(function() {
+        $("#notification").css("display", "none")
+    })
 });
 
 function changeImage() {
@@ -126,36 +131,57 @@ function changeImage() {
         img2=Math.floor(Math.random()*100);
     }
 
+    imgprev1 = img1;
+    imgprev2 = img2;
+
     img1 = ('00' + img1).slice(-3);
     img2 = ('00' + img2).slice(-3);
     $("#compare1").attr("style", "background-image:url(img/lesions/ISIC_0000" + img1 + ".jpg)");
     $("#compare2").attr("style", "background-image:url(img/lesions/ISIC_0000" + img2 + ".jpg)");
 
-    imgprev1 = img1;
-    imgprev2 = img2;
+    patientcounter++
+    if (patientcounter == 20) {
+        var patient = 9;
+        $("#patient").attr("src", "img/patient/female" + patient + ".png");
+        $("#notification").slideDown()
+        patientcounter = 0;
+    }
 }
 
 function changeQuestion(init) {
     clickcount++;
 
     if (questionduration == clickcount) {
-        if (init == 1) {
-            $("#question").css("color", "#CC0000");
-        }
         while (question == prevquestion) {
             question = Math.floor(Math.random() * 3);
         }
         prevquestion = question;
 
+        $("#nav").removeClass("danger-color");
+        $("#nav").removeClass("primary-color");
+        $("#nav").removeClass("success-color");
+
         switch (question) {
             case 0:
                 $("#question").html("<b>Which picture is more asymmetric?</b>")
+                $("#nav").addClass("danger-color");
+                if (init == 1) {
+                    $("#question").css("color", "#ff4444");
+                }
                 break;
             case 1:
                 $("#question").html("<b>Which picture has a more irregular border?</b>")
+                $("#nav").addClass("primary-color");
+                if (init == 1) {
+                    $("#question").css("color", "#4285F4");
+                }
                 break;
             case 2:
                 $("#question").html("<b>Which picture has a higher variation in color?</b>")
+                $("#nav").addClass("success-color");
+                if (init == 1) {
+                    $("#question").css("color", "#00C851");
+                }
                 break;
         }
 

@@ -41,6 +41,28 @@
     color: whitesmoke;
 }
 
+.notification {
+    width: 40%;
+    position: fixed;
+    top: 3%;
+    left: 50%;
+    margin-left: -20%;
+    z-index: 2;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    display: none;
+}
+
+.innernotification {
+    width: 80%;
+    margin: auto;
+}
+
+.innernotification p {
+    font-size: 16px;
+
+}
+
 #tutorialoverlay {
     position: fixed;
     display: block;
