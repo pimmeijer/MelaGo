@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>App</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- JQuery Color -->
+    <script src="js/jquery.color-2.1.2.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- JQuery functions -->
+    <script src="js/jquery_compare.js"></script>
+</head>
+
+<body>
+    <!-- Start your project here-->
+    <div class="notification text-center" id="notification">
+        <div class="text-center innernotification">
+            <img class="img-fluid mt-3 mb-2" src="img/patient/loading.png" alt="patient" id="patient"/>
+            <p>Your patient has gotten better!</p>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark navbar-fixed-top" id="nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Annotation<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tutorial.html">Tutorial</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<!--
+DATABASE
+Check which image is clicked
+Check corresponding ID
+Check ABC question
+Assign points to ID
+Increase patient counter
+Increase unlockable counter
+Increase total images graded
+Check whether the patient status has increased, if so, notify the user
+-->
+    <div class="container-fluid">
+        
+         
+        <div class="row justify-content-center">
+            <div class="col-2" align="center">
+                <i class="fa fa-adjust fa-2x mt-3" aria-hidden="true" id="filter"></i>
+            </div>
+            <div class="col-8 text-center">
+                <div class="compare mt-4" id="compare1"></div>
+            </div>
+            <div class="col-2" align="center">
+                <i class="fa fa-mail-forward fa-2x mt-3" aria-hidden="true" id="notsure"></i>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <h5 class="mt-4 h5-responsive" id="question"></h5>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8 text-center">
+                <div class="compare mt-4" id="compare2"></div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- /Start your project here-->
+
+
+</body>
+
+</html>

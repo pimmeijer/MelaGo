@@ -33,7 +33,7 @@
     <!-- Start your project here-->
     <div class="notification text-center" id="notification">
         <div class="text-center innernotification">
-            <img class="img-fluid mt-3 mb-2" src="img/patient/female6.png" alt="patient" id="patient"/>
+            <img class="img-fluid mt-3 mb-2" src="img/patient/loading.png" alt="patient" id="patient"/>
             <p>Your patient has gotten better!</p>
         </div>
     </div>
@@ -73,6 +73,10 @@ Increase total images graded
 Check whether the patient status has increased, if so, notify the user
 -->
     <div class="container-fluid">
+        
+          <div class="progress" style="height: 20px">
+                <div class="progress-bar" role="progressbar" style="width: 0%; height: 50px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progress"></div>
+            </div>
         <div class="row justify-content-center">
             <div class="col-2" align="center">
                 <i class="fa fa-adjust fa-2x mt-3" aria-hidden="true" id="filter"></i>
@@ -95,6 +99,7 @@ Check whether the patient status has increased, if so, notify the user
             </div>
         </div>
     </div>
+  
     <!-- /Start your project here-->
 
 

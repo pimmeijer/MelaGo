@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>App</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- JQuery Color -->
+    <script src="js/jquery.color-2.1.2.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- JQuery functions -->
+    <script src="js/jquery_tutorial.js"></script>
+</head>
+
+<body>
+    <div id="tutorialoverlay">
+        <div id="overlaytext" class="text-center">
+            <h5 id="instruction">Tap one of the images according to the question in the middle.</h5>
+            <button class="btn btn-primary" type="button" id="nextbutton" onclick="next()">Next</button>
+        </div>
+    </div>
+    <!-- Start your project here-->
+    <nav class="navbar navbar-dark primary-color navbar-fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="compare.html">Annotation</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Tutorial<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-8 text-center">
+                <div class="compare mt-4" id="compare1" style="background-image:url(img/tutorial/tut01.jpg)"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <h5 class="mt-4 h5-responsive" id="question"><b>Which image is more asymmetric?</b></h5>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8 text-center">
+                <div class="compare mt-4" id="compare2" style="background-image:url(img/tutorial/tut02.jpg)"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /Start your project here-->
+
+
+</body>
+
+</html>
